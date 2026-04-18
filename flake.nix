@@ -1,7 +1,7 @@
 {
   description = "PNL Bakibaki APK Server";
 
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
 
   outputs = { self, nixpkgs }: let
     forAllSystems = nixpkgs.lib.genAttrs [ "x86_64-linux" "aarch64-linux" ];
@@ -23,7 +23,7 @@
           enable = mkEnableOption "PNL Bakibaki APK Server";
           port = mkOption {
             type = types.port;
-            default = 50080;
+            default = 80;
             description = "Port to listen on.";
           };
         };
